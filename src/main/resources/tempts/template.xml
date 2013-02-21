@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+	<!-- 定位到列表整体 -->
+	<listTemplate id="law001" name="宪法及宪法类法律" url="http://www.jincao.com/fa/01/law01.htm" xpath="/html/body/div[3]/center/table/tbody/tr/td[2]/div/table/tbody">
+		<!-- 定位到列表中的每条记录 -->
+		<listRecordTemplate xpath="tr">
+			<value xpath="td/p/font/a/@href" type="attr">url</value><!-- 定位到节点属性 -->
+			<value xpath="td/p/font/a" type="text">title</value><!-- 定位到节点 -->
+		</listRecordTemplate>
+		<!-- 定位到记录中的内容页面 -->
+		<contentTemplate xpath="/html/body/div[2]" urlRoot="http://www.jincao.com/fa/01/">
+			<value xpath="center/table/tbody/tr/td" type="text">title</value>
+			<value xpath="div[@align='center']" type="html">content</value>
+		</contentTemplate>
+	</listTemplate>
+	
+	<!-- template ... -->
+
+</templates>
+
+
+
+
