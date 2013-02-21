@@ -56,14 +56,14 @@ public class DefaultFetcher implements IFetcher{
 				ContentTemplate contentTemplate = listTemplate.getContentTemplate();
 				ITER_RECORD_NODES:
 				for (int i = 0; i < recordNodes.size(); i++) {
-					Node recordNode = recordNodes.get(i);
-					if(logger.isDebugEnabled()) logger.debug(MessageFormat.format("解析第[{0}]条记录,record:{1}", i+1,recordNode.asXML()));
-					Record record = new Record();
-					List<Content> cnts = new ArrayList<Content>(); 
-					record.setValueMap(fetchValueNodes(recordTemplate.getValues(), recordNode));
-					record.getValueMap().putAll(listValueMap);
-					
 					try {
+						Node recordNode = recordNodes.get(i);
+						if(logger.isDebugEnabled()) logger.debug(MessageFormat.format("解析第[{0}]条记录,record:{1}", i+1,recordNode.asXML()));
+						Record record = new Record();
+						List<Content> cnts = new ArrayList<Content>(); 
+						record.setValueMap(fetchValueNodes(recordTemplate.getValues(), recordNode));
+						record.getValueMap().putAll(listValueMap);
+
 						Content cnt = new Content();
 						// 解析content,内容解析可扩展为一条记录对应多条内容页面
 						try {
